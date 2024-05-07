@@ -10,6 +10,7 @@ import {
   InfoCircleOutlined,
   FieldTimeOutlined,
   PayCircleOutlined,
+  FcBusinessman,LoginOutlined,LogoutOutlined,
 
 } from '@ant-design/icons';
 import { Outlet, useNavigate } from 'react-router-dom';
@@ -25,6 +26,26 @@ function getItem(label, key, icon, children) {
     label,
   };
 }
+// const menuUser = [
+//   {
+//     key: "1",
+//     label: "Profile",
+//     icon: <FcBusinessman />,
+//     onClick: handleProflie,
+//   },
+//   {
+//     key: "2",
+//     label: "Login",
+//     icon: <LoginOutlined />,
+//     onClick: onChangePassword,
+//   },
+//   {
+//     key: "3",
+//     label: "Logout",
+//     icon: <LogoutOutlined />,
+//     onClick: handleLogout,
+//   },
+// ];
 const logo = require("../../asset/image/catslogo.png");
 const Whitelogo = require("../../asset/image/CatsWhiteLogo.png");
 // const themes = {
@@ -66,10 +87,10 @@ const Whitelogo = require("../../asset/image/CatsWhiteLogo.png");
 // };
 
 const items = [
-  getItem('Dashboard', 'tasks', <PieChartOutlined />),
+  getItem('Dashboard', 'dashboard', <PieChartOutlined />),
   getItem('Info & Management', 'info', <InfoCircleOutlined />),
   getItem('Attendance', '1', <FieldTimeOutlined />),
-  getItem('Leave Management', '/', <TeamOutlined />, [getItem('All Employee', 'leave', <TeamOutlined />), getItem('My Leave', '8', <UserOutlined />)]),
+  getItem('Leave Management', '/', <TeamOutlined />, [getItem('All Employee', 'leave', <TeamOutlined />), getItem('Leave Request', 'leave-request', <UserOutlined />)]),
   getItem('Payroll', '11', <PayCircleOutlined />), 
   getItem('Report', '9', <FileOutlined />),
   getItem('Setting', '10', <SettingOutlined />),
@@ -107,6 +128,7 @@ const MainLayout = () => {
 
         }}
       >
+        
         <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
 
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={onChange} />

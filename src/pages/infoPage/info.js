@@ -1,38 +1,102 @@
 
 import React from 'react';
 import { Button, Flex, Segmented } from 'antd';
-const boxStyle = {
-  width: '100%',
-  height: 120,
-  borderRadius: 6,
-  border: '1px solid #40a9ff',
-};
-const justifyOptions = [
-  'Personal Detail',
-  'center',
-  'flex-end',
-  'space-between',
-  'space-around',
-  'space-evenly',
-  'Data',
+import Box from '@mui/material/Box';
+import { Tabs } from 'antd';
+import Personal_Detail from './tab/Personal_Detail';
+import History from './tab/History';
+import Family from './tab/Family_Data';
+import PageTitle from '../../components/Title_Page/TitlePage';
+import Education from './tab/Education';
+import Special from './tab/Special_Ability';
+import Past_Employee from './tab/Past_Employee';
+import Emergency from './tab/Emergency_Contact';
+import Children from './tab/Children';
+
+const Info = () => {
+  const items = [
+    {
+        key: '1',
+        label: ' Personal Detail',
+        children: <Personal_Detail />,
+    },
+    {
+        key: '2',
+        label: ' History',
+        children: <History />,
+    },
+    {
+        key: '3',
+        label: ' Family Data',
+        children: <Family />,
+    },
+    {
+        key: '4',
+        label: ' Education',
+        children: <Education />,
+    },
+    {
+        key: '5',
+        label: 'Special Ability',
+        children: <Special />,
+    },
+    {
+        key: '6',
+        label: 'Past Employee',
+        children: <Past_Employee />,
+    },
+    {
+      key: '7',
+      label: 'Emergency Contact',
+      children: <Emergency />,
+  },
+  {
+    key: '8',
+    label: 'Children',
+    children: <Children />,
+  },
+
+
+
+
 ];
-const alignOptions = ['flex-start', 'center', 'flex-end'];
-const App = () => {
-  const [justify, setJustify] = React.useState(justifyOptions[0]);
-  const [alignItems, setAlignItems] = React.useState(alignOptions[0]);
-  return (
-    <Flex gap="middle" align="start" vertical>
-      <h1>Info & Management</h1>
-      <Segmented options={justifyOptions} onChange={setJustify} />
-      <p>hellll</p>
+
+
+return (
+  <>
+      <PageTitle
+          PageTitle='Info & Management'
+      />
+   <div className='border-box match'>
+                
+                    <Tabs
+                        defaultActiveKey="1"
+                        type="card"
+                        size={'large'}
+                        items={items}
+                    />
+                
+                </div>
+  
+    {/* <Box
+      height={600}
+      width={1400}
+      my={4}
+      display="flex"
+      alignItems="center"
+      gap={4}
+      p={2}
+      sx={{ border: '2px solid grey' }}
+    >
+      This Box uses MUI System props for quick customization.
+    </Box>
+   */}
+
       
-      {/* <Flex style={boxStyle} justify={justify} align={alignItems}>
-        <Button type="primary">Primary</Button>
-        <Button type="primary">Primary</Button>
-        <Button type="primary">Primary</Button>
-        <Button type="primary">Primary</Button>
-      </Flex> */}
-    </Flex>
-  );
-};
-export default App;
+  
+    
+    </>
+
+  )
+}
+export default Info;

@@ -1,63 +1,41 @@
 import './leavePage.css'
 import { Button, Space, DatePicker, Table, Select,Pagination, Flex } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined,ExportOutlined } from '@ant-design/icons';
+import PageTitle from '../../components/Title_Page/TitlePage';
 const { RangePicker } = DatePicker;
-const handleChange = (value) => {
+
+
+const onChange = (value) => {
   console.log(`selected ${value}`);
 };
+const onSearch = (value) => {
+  console.log('search:', value);
+};
+
+
+// Filter `option.label` match the user type `input`
+const filterOption = (input, option) =>
+  (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
 const LeavePage = () => {
   
-
-  // const dataSource = [
-  //   {
-  //     key: '1',
-  //     name: 'Mike',
-  //     age: 32,
-  //     address: '10 Downing Street',
-  //   },
-  //   {
-  //     key: '2',
-  //     name: 'John',
-  //     age: 42,
-  //     address: '10 Downing Street',
-  //   },
-  // ];
-
-  // const columns = [
-  //   {
-  //     title: 'Name',
-  //     dataIndex: 'name',
-  //     key: 'name',
-  //   },
-  //   {
-  //     title: 'Age',
-  //     dataIndex: 'age',
-  //     key: 'age',
-  //   },
-  //   {
-  //     title: 'Address',
-  //     dataIndex: 'address',
-  //     key: 'address',
-  //   },
-  //   {
-  //     title: 'Name',
-  //     dataIndex: 'address',
-  //     key: 'address',
-  //   }, 
-
-  // ];
+  
   const columns = [
+    {
+      title: 'No',
+      dataIndex: 'no',
+    },
+
     {
       title: 'Name',
       dataIndex: 'name',
     },
     {
-      title: 'Chinese Score',
-      dataIndex: 'chinese',
-      sorter: {
-        compare: (a, b) => a.chinese - b.chinese,
-        multiple: 3,
-      },
+      title: 'Department',
+      dataIndex: 'department',
+      // sorter: {
+      //   compare: (a, b) => a.chinese - b.chinese,
+      //   multiple: 3,
+      // },
     },
     {
       title: 'Math Score',
@@ -79,32 +57,222 @@ const LeavePage = () => {
   const data = [
     {
       key: '1',
+      no:1,
       name: 'John Brown',
-      chinese: 98,
+      department: 98,
       math: 60,
       english: 70,
     },
     {
       key: '2',
+      no:2,
       name: 'Jim Green',
-      chinese: 98,
+      department: 98,
       math: 66,
       english: 89,
     },
     {
       key: '3',
+      no:3,
       name: 'Joe Black',
-      chinese: 98,
+      department: 98,
       math: 90,
       english: 70,
     },
     {
       key: '4',
+      no:4,
       name: 'Jim Red',
-      chinese: 88,
+      department: 88,
       math: 99,
       english: 89,
     },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '1',
+      no:1,
+      name: 'John Brown',
+      department: 98,
+      math: 60,
+      english: 70,
+    },
+
   ];
   const onChange = (pagination, filters, sorter, extra) => {
     console.log('params', pagination, filters, sorter, extra);
@@ -113,87 +281,104 @@ const LeavePage = () => {
 
   return (
     <>
-      <h1>Leave Page</h1>
+      <PageTitle
+         PageTitle='Leave'
+      
+      />
 
       <Space  >
+        
         <Select
-          defaultValue="lucy"
-          style={{
-            width: 180,
-            height: 30,
+        style={{
+          width: 180,
+          height: 30,
 
-          }}
-          onChange={handleChange}
-          options={[
-            {
-              value: 'jack',
-              label: 'Jack',
-            },
-            {
-              value: 'lucy',
-              label: 'Lucy',
-            },
-            {
-              value: 'Yiminghe',
-              label: 'yiminghe',
-            },
+        }}
+        Select
+        showSearch
+        placeholder="Leave Type"
+        optionFilterProp="children"
+        onChange={onChange}
+        onSearch={onSearch}
+        filterOption={filterOption}
+        options={[
+          {
+            value: 'jack',
+            label: 'Jack',
+          },
+          {
+            value: 'lucy',
+            label: 'Lucy',
+          },
+          {
+            value: 'tom',
+            label: 'Tom',
+          },
+        ]}
+      />
+      <Select
+        style={{
+          width: 180,
+          height: 30,
 
-          ]}
-        />
-        <Select
-          defaultValue="lucy"
-          style={{
-            width: 180,
-            height: 30,
-
-          }}
-          onChange={handleChange}
-          options={[
-            {
-              value: 'jack',
-              label: 'Jack',
-            },
-            {
-              value: 'lucy',
-              label: 'Lucy',
-            },
-            {
-              value: 'Yiminghe',
-              label: 'yiminghe',
-            },
-
-          ]}
-        />
+        }}
+        Select
+        showSearch
+        placeholder="Status"
+        optionFilterProp="children"
+        onChange={onChange}
+        onSearch={onSearch}
+        filterOption={filterOption}
+        options={[
+          {
+            value: 'jack',
+            label: 'Jack',
+          },
+          {
+            value: 'lucy',
+            label: 'Lucy',
+          },
+          {
+            value: 'tom',
+            label: 'Tom',
+          },
+        ]}
+      />
+        
         <RangePicker />
         <Select
-          defaultValue="lucy"
-          style={{
-            width: 180,
-            height: 30,
+        style={{
+          width: 180,
+          height: 30,
 
-          }}
-          onChange={handleChange}
-          options={[
-            {
-              value: 'jack',
-              label: 'Jack',
-            },
-            {
-              value: 'lucy',
-              label: 'Lucy',
-            },
-            {
-              value: 'Yiminghe',
-              label: 'yiminghe',
-            },
-
-          ]}
-        />
+        }}
+        Select
+        showSearch
+        placeholder="Department"
+        optionFilterProp="children"
+        onChange={onChange}
+        onSearch={onSearch}
+        filterOption={filterOption}
+        options={[
+          {
+            value: 'jack',
+            label: 'Jack',
+          },
+          {
+            value: 'lucy',
+            label: 'Lucy',
+          },
+          {
+            value: 'tom',
+            label: 'Tom',
+          },
+        ]}
+      />
         <Button icon={<SearchOutlined />} type='primary' >Search</Button>
 
         <div>
           
-          <Button  icon={<SearchOutlined />} type='primary' >Export xlsx</Button>
+          <Button icon={<ExportOutlined />} type='primary' >Export xlsx</Button>
         </div>
       </Space>
 
@@ -202,13 +387,5 @@ const LeavePage = () => {
   )
 
 }
-const App = () => (
-  <Pagination
-    total={85}
-    showSizeChanger
-    showQuickJumper
-    showTotal={(total) => `Total ${total} items`}
-  />
-);
-
+const App = () => <Pagination defaultCurrent={6} total={500} />;
 export default LeavePage;
