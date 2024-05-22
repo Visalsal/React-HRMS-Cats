@@ -11,6 +11,7 @@ import {
   FieldTimeOutlined,
   PayCircleOutlined,
   FcBusinessman,LoginOutlined,LogoutOutlined,
+  BankOutlined,
 
 } from '@ant-design/icons';
 import { Outlet, useNavigate } from 'react-router-dom';
@@ -92,6 +93,8 @@ const items = [
   getItem('Attendance', '1', <FieldTimeOutlined />),
   getItem('Leave Management', '/', <TeamOutlined />, [getItem('All Employee', 'leave', <TeamOutlined />), getItem('Leave Request', 'leave-request', <UserOutlined />)]),
   getItem('Payroll', '11', <PayCircleOutlined />), 
+  getItem('Department', 'department', <BankOutlined />), 
+  getItem('Staff', 'staff', <UserOutlined />), 
   getItem('Report', '9', <FileOutlined />),
   getItem('Setting', '10', <SettingOutlined />),
 ];

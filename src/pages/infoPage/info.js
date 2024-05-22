@@ -13,6 +13,8 @@ import Past_Employee from './tab/Past_Employee';
 import Emergency from './tab/Emergency_Contact';
 import Children from './tab/Children';
 
+
+
 const Info = () => {
   const items = [
     {
@@ -67,6 +69,8 @@ return (
       <PageTitle
           PageTitle='Info & Management'
       />
+
+
    <div className='border-box match'>
                 
                     <Tabs
